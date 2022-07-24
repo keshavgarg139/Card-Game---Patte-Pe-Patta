@@ -71,9 +71,9 @@ class Player :
 		return Deck(self.deck.cards + visible_deck.cards), Deck([])
 
 
-def screenshow(players,visible_deck) :
-	for player in players :
-		print player.name,
+# def screenshow(players,visible_deck) :
+# 	for player in players :
+# 		print player.name,
 
 class Game :
 	players = []
@@ -84,12 +84,12 @@ class Game :
 	def initiate(self) :
 
 		while True:	
-			name = str(raw_input("\n Enter the name of the player :- \n"))
+			name = str(input("\n Enter the name of the player :- \n"))
 			self.players.append(Player(name, cards = []))
 			if len(self.players) < 2:
 				continue
 			else :
-				inp = str(raw_input("\n To add more players please enter 1 \n"))
+				inp = str(input("\n To add more players please enter 1 \n"))
 				if inp != '1' :
 					break
 
@@ -114,17 +114,17 @@ class Game :
 		acknowledgement_display()
 	
 	def printscore(self,totalscore) :
-		print "GAME NO. , ",
+		print("GAME NO. , ")
 		for player in self.players :
-			print player.name,
-			print "   ",
+			print(player.name)
+			print("   ")
 		print("\n   ")	
 		for i in range(len(totalscore)):
-			print "  "+str(i+1),
-			print "         ",
+			print("  "+str(i+1)),
+			print("         "),
 			for indiv_score in totalscore[i] :
-				print indiv_score,
-				print "     ",
+				print(indiv_score)
+				print("     ")
 
 
 	def is_game_on(self) :
@@ -167,4 +167,4 @@ def main():
 	p2p.printscore(totalscore)
 
 if __name__== "__main__":
-	main()	
+	main()
